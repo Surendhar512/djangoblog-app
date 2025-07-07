@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Blog</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+
+    {% for post in posts %}
+        <div style="margin-bottom: 30px;">
+            <h2>{{ post.title }}</h2>
+            <small>Published: {{ post.created_at }}</small>
+            <p>{{ post.content|linebreaks }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>No blog posts available yet.</p>
+    {% endfor %}
+</body>
+</html>
